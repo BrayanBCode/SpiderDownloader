@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <title>SpiderLoader</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-logo">SpiderLoader</a>
+            <ul class="nav-list">
+                <li><a href="/" target="_blank">Soporte</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Descargas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="search-items">
+            <form action="/search" method="post">
+                <input type="url" name="search-bar" id="search-bar" class="search-bar"
+                    placeholder="Ingresa el link de un video de Youtube">
+                <input type="submit" value="Buscar" class="send">
+
+                <!-- <div class="div-route-bar">
+                    <input type="file" name="Ruta de descarga" id="route-bar" webkitdirectory directory>
+                    <p>Selecionar ruta de descarga</p>
+                </div> -->
+                
+            </form>
+            <table>
+                <tr>
+                    {% for header in headings %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                    <td> {{ cell }} </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tr>
+            </table>
+        </div>
+
+
+    </section>
+    <!-- <h1>SpiderLoader</h1> -->
+</body>
+
+</html>
